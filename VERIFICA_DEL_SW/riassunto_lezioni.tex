@@ -1,0 +1,53 @@
+\documentclass[10pt,                    % corpo del font principale
+               a4paper,                 % carta A4
+               twoside,                 % impagina per fronte-retro
+               openright,               % inizio capitoli a destra
+               english,                 
+               italian,                 
+               ]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[english, italian]{babel}
+\usepackage{hyperref}
+\begin{document}
+\chapter{Introduzione}
+
+\section{Analisi statica}
+Analisi statica (alla SWE): analisi di un programma senza l'esecuzione a \textit{runtime}. Permette di ottenere informazioni sul programma stesso.
+\\\\
+L'obiettivo del corso di Verifica del \textit{software} comprende l'utilizzo della correttezza per comprendere l'esecuzione di un programma a \textit{runtime}. Permette di ottenere la piena garanzia di correttezza del programma.\\
+La verifica pu\`o venire fatta per qualunque versione del codice sorgente (\textit{bytecode} o altro). Viene svolta con analizzatori di codice o moduli. Quest'ultimi effettuano una verifica progressiva, parallela alla scrittura.
+\\
+Polyspace: strumento di analisi di codice statico, dimostra l'esistenza di errori a \textit{runtime} critici. Verifica codice C, C++ o Ada.\\
+Un problema esistente \`e la mancata scalabilit\`a della verifica.\\
+Quando si scrive un analizzatore \`e bene utilizzare un linguaggio di programmazione robusto (come Ada).
+Tuttavia la quasi assenza di persone competenti in tale ambito incide sulla difficolt\`a di risolvere i problemi legati agli analizzatori.\\\\
+Alcuni esempi di analizzatori:
+\begin{itemize}
+\item Interproc \`e un analizzatore accademico che inferisce invarianti;
+\item Jandom \`e un analizzatore Java, scritto in Scala (ovvero Java funzionale avanzato).
+\end{itemize}
+\noindent
+Di recente \`e l'impiego degli analizzatori per gli algoritmi di \textit{Machine Learning}.
+
+\section{Motivazioni}
+Le motivazioni che portano allo studio dell'analisi statica:
+\begin{enumerate}
+\item Fallimenti \textit{software}: caso di Ariane 5.\\
+Il razzo una volta lanciato in aria si autodistrugge.\\
+Si era verificato un \textit{software error}, conversione tra virgola mobile a intero, con perdita d'informazione, che ha lanciato un'eccezione non catturata causando la chiusura di tutti i programmi del razzo. L'ultimo programma eseguito \`e stato l'autodistruzione.
+\item \textit{Meltdown} e \textit{Spectre}: i processori moderni usano l'esecuzione speculativa (tecnica di otimizzazione. L'eleaboratore esegue operazioni necessarie forse solo in un secondo tempo. \url{https://it.wikipedia.org/wiki/Esecuzione_speculativa.}) per velocizzare il lavoro. Un \textit{team} di ricercatori ha su tale tecnica individuato un \textit{bug} di sicurezza, causato delle \textit{miss prediction} che lasciavano dati sensibili all'inteno delle \textit{cache}, innescando eventuali \textit{time attact}.
+L'Intel, precedentemente la pubblicazione della ricerca, avvisata dal \textit{team}, ha mitigato il problema in modo \textit{hardware}. Un modo per impedire la nascita di questi \textit{bug} \`e svolgere gi\`a durante lo sviluppo del codice l'analisi statica. 
+\end{enumerate}
+\noindent
+Una buona tecnica, per punti, che permette di prevenire fallimenti del codice \`e la seguente:
+\begin{itemize}
+\item Scegliere un buon linguaggio;
+\item Svolgere progettazione;
+\item Effettuare \textit{code testing};
+\item Utilizzare un metodo formale di analisi statica. Questo permette la totale garanzia della correttezza del codice prodotto.
+\end{itemize}
+
+\end{document}

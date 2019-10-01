@@ -1,0 +1,52 @@
+\documentclass[10pt,a4paper]{book}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+\chapter{Introduzione}
+\section{Argomenti}
+\begin{itemize}
+\item Agenti intelligenti;
+\item Problemi e algoritmi di ricerca;
+\item Giochi con problemi di ricerca: siano negli anni '70 dove si ispezionano tutti i casi possibili con un agente intelligente.
+\item Rappresentazione della conoscenza e ragionamento: dagli anni '70 in poi. Il calcolo proposizionale risulta non sufficientemente espressivo, ma permette di fare inferenza (conoscenza). Si parla di calcolo dei predicati e di programmazione logica. Si ottiene in questo modo una definizione del problema e del dominio che porta a ottenere un risultato del problema.
+\item Trattazione dell'incertezza: nel mondo reale esiste il problema dell'incertezza, diversi gradi modellati abbastaza bene con la teoria di probabilit\`a. L'incertezza si risolve conoscendo la distribuzione di probabilit\`a congiunta. Ovvero indipendenza condizionale dove, per esempio, se conosco C, allora A \`e indipendente da B (fattorizzazione della probabilit\`a congiunta). Esperessione nelle reti \textit{bayesiane}.
+\item Introduzione all'Apprendimento automatico, \textit{Machine Learning} e Apprendimento con rinforzo: va considerato come usare un modello probabilistico ha un costo computazionale enorme. Per questo nasce l'Apprendimento automatico, ovvero quando l'elaboratore acquisisce informazioni per avere conoscenza mediante addestramento. Nelle Reti Neurali si superano le prestazioni dell'essere umano nel riconoscimento di suoni, parlato, elaborazione dati, .. .
+In ogni caso c'\`e sempre necessit\`a di una grande potenza computazionale e dati. Per questo i maggiori \textit{leader} in tali ambiti sono Google, IBM e Microsoft.
+\\
+Tuttavia l'aumento della potenza dell'elaboratore non porta buoni risultati solo nell'area dell'apprendimento, ma anche della probabilit\`a.\\
+Si parla di apprendimento con rinforzo quando vengono provate \textit{random} tutte le strade possibili, concetrandosi per avere risultati su quelle migliori.
+\item Elaborazione linguaggio naturale: \`e il linguaggio naturale che permette ai \textit{robot} di comprendere e interagire con il mondo esterno;
+\item Visione aritificiale.
+\end{itemize}
+
+\section{Agente intelligente}
+Un agente razionale \`e un agente intelligente.\\
+Esistono tanti tipi di intelligenza: emotiva, relazionale, ecc.\\
+Un agente agisce nel mondo che lo circonda, ha degli obiettivi fissati che raggiunge per mezzo dell'informazione che ha disponibile.\\
+Incide la potenza di calcolo, percui un agente \`e intelligente se riesce a fare il suo meglio possibile, anche solo avvicinandosi a dei risultati.\\
+Cerca di massimizzare il soddisfacimento dei propri bisogni sfruttando le informazioni di cui dispone, o che pu\`o acquisire per mezzo delle sue azioni.\\
+Dal punto di vista matematico usa tempi discreti come momento di acquisizione delle informazioni, ed \`e  formalizzabile come:
+\begin{equation}
+f:\textit{P*} \longrightarrow \textit{A}
+\end{equation}
+dove f rappresenta un obiettivo e $\longrightarrow$ tutte le informazioni possibili per poter raggiungere quell'obiettivo.\\
+Tuttavia le limitazioni computazionali possono impedire la realizzazione di razionalit\`a perfetta, dunque si cerca esempio di usare la memoria a disposizione nel modo migliore.\\
+Gli agenti si distinguono in agenti fisici, come \textit{robot}, attatori, umani e \textit{soft}, come il contenuto di una pagina \textit{web}.\\
+Il dominio di f rappresenta tutte le possibili percezioni da quando l'agente ha iniziato a funzionare.
+\\\\
+Esempio dell'aspirapolvere: deve sapere dove si trova e se la stanza \`e sporca.\\
+Percezioni stanza, pulito/sporco.\\
+Azioni sinistra, destra, aspira.\\
+\\
+L'algoritmo non \`e intelligentissimo, perch\`e se le stanza sono tutte pulite continua ad andare avanti e indietro, per\`o tale algoritmo fa uso di pochissima memoria.'\\
+Importante \`e fissare la misura di prestazione che valuta la sequenza di percezioni, ovvero quanto bene ha lavorato il robottino con un certo numero di risorse. Inoltre non \`e detto che il robottino aspiri sempre tutto, per questo la misura dipende anche dalle caratteristiche dell'ambiente.
+Lo scopo \`e individuare la misura di prestazione massimizzata. Per farlo non \`e necessario che l'agente sia omniescente, basta che sia razionale e faccia del suo meglio con le informazioni. Razionalit\`a non \`e sempre sinonimo di successo (per mancanza di risorse, esempio precisione non disponibile).\\
+Inoltre un agente razionale deve saper anche risolvere situazioni che il progettista non ha pensato, grazie all'addestramento.\\
+\\
+PEAS identifica 4 componenti da caratterizzare, le caratteristiche dell'ambiente dove l'agente \`e chiamato a operare: la misura delle prestazioni, l'ambiente operativo, attuatori (le percezioni) e i sensori (le azioni). 
+
+\end{document}
