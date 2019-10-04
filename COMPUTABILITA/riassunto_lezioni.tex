@@ -1,0 +1,113 @@
+\documentclass[10pt,a4paper]{book}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+\chapter{Introduzione}
+\section{Argomenti}
+Pensiamo a un punto lontano nel tempo 2150: necessit\`a di tenere traccia di $n$ numeri di telefono, risparmiando spazio scrivendoli per intero.\\
+Idea di rubrica: non scrivere il numero interamente, ma un programma pi\`u breve del numero di telefono. Questa sembra una memorizzazione efficiente.\\
+Tuttavia non \`e sempre vero:
+\begin{equation}size(n) <= size(P)\end{equation}
+Causato dall'esistenza dei numeri casuali, ovvero programmi di dimensione superiore al numero stesso.\\
+I numeri casuali sono in numero infinto, inoltre non \`e possibile realizzare un programma che determini se un numero \`e casuale.\\\\
+Conclusione: non tutto si pu\`o risolvere per mezzo di un calcolatore, questi problemi sono ben formalizzati. Alcuni esempi sono:
+\begin{itemize}
+\item \textit{Haiting Input} (problema della non terminazione di un programma dato uno specifico input);
+\item Correttezza dei programmi.
+\end{itemize}
+L'obiettivo del corso \`e:
+\begin{itemize}
+\item Quali sono i problemi risolvibili con una procedura effettiva;
+\item Cosa \`e una procedura effettiva;
+\item Cosa vuol dire che un problema \`e risolto;
+\item Problemi risolvibili e non risolvibili.
+\end{itemize}
+\noindent
+Considereremo sempre che le risorse non sono un problema.
+
+\section{Storicamente}
+L'informatica inizia a trattare i problemi di computabilit\`a ancora prima di nascere.\\\\
+\noindent
+\textit{Dijkstra} parla di "informatica scienza delle procedure".\\
+L'informatica \`e figlia della logica intesa come studio dei maccanismi del ragionamento (da dalle premesse si riesce a trarre delle conclusioni).\\
+Si parla di schemi di ragionamento che portano a delle varit\`a sempre vere:\\
+Ogni uomo \`e morale $\longrightarrow$ Socrate \`e un uomo $\longrightarrow$ Socrate \`e un uomo
+\\\\
+\textit{Lullus} cosruisce il primo esempio di meccanismo, la ruola lulliana. Crea frasi su cui l'uomo pu\`o ragionare.
+\\\\
+\textit{Leibniz} idea una lingua artificiale per mettere in relazione dei concetti (lingua per rappresentare le relazioni tra i pensieri umani). In questo modo viene favorita una lingua universale che permette l'apprendimento e lo sviluppo del sapere:
+\begin{itemize}
+\item \textit{Caracteristica Universalis}: linguaggio universale che permette di esprimere nozione e concetto. Usa simboli, nozioni di base e grammatica.
+\item \textit{Calculus ratiocinator}: ragionamento attraverso una manipolazione di simboli.
+\end{itemize}
+\noindent
+Questo permette di avere un metodo matematico che risolve le controversie. Un esempio pratico di questa idea \`e la \textit{Staffelwalze}, la prima macchina calcolatrice che computa le quattro operazioni aritmetiche.
+\\\\
+\textit{Boole} riprende le idee di \textit{Leibniz}. vuole interpretare con un'algebra (formalismo simbolico) i meccanismi della logica: algebra booleana che fornisce uno strumento di congiunzione tra i concetti. Per farlo tutto viene regolamentato da leggi $\in$ {0,1} che consentendo la creazione di leggi universalmente accettate.\\\\
+\textit{Baddage} sviluppa  idealmente delle macchine \textit{general purpose} per il calcolo dei polinomi e a schede perforate programmabili con memoria e unit\`a aritmetica. Quest'ultima ha permesso lo sviluppo di ADA.\\\\
+\textit{Frege} inventa la logica del primo ordine e si occupa di togliere la circolarit\`a presente all'interno della Logica di \textit{Boole}. Introduce i quantificatori esiste e per ogni. Tuttavia \textit{Russel} individua un paradosso nei suoi ragionamenti \{$x | x \notin x$\}.\\\\
+\noindent
+\textit{Hilbert} ricerca un sistema matematico formale composto da regole e assiomi, che si dimostri consistente e solido, senza alcun paradosso. In modo da ottenere un algoritmo in grado di definire se un teorema \`e conseguenza diretta dei suoi assiomi.\\\\
+\textit{Godel} dimostra l'impossibilit\`a delle aspettative di \textit{Hilbert}. Esiste sempre qualcosa di vero impossibile da dimostrare. Inotre se T \`e assiomatizzabile non \`e possibile dimostrarne la consistenza interna.\\\\
+\textit{Turing} definisce il concetto di algoritmo e si inventa una macchina programmabile con funzione calcolabile per dimostrare che non tutti i teoremi sono risolvibili. In questo modo \textit{Turing} dimostra l'esistenza di una macchina universale che funge da interprete (esecuzione di programmi sui dati di \textit{input}). Tuttavia la realizzazione del primo calcolatore programmabile fallisce a causa di limiti di risorse.\\\\
+\textit{Von Neumann} realizza il primo progetto di macchina calcolatrice dall'idea della macchina di \textit{Turing} universale, realizzando il \textit{computer} digitale moderno.\\\\
+\pagebreak
+
+\chapter{Algoritmo e calcolabilit\`a}
+
+"Gli algoritmi sono pochi, le cose da calcolare tante."\\\\
+\noindent
+Un algoritmo o procedura \`e una sequenza di passi elementari (meccanici, senza intelligenza) che permettono di ottenere un certo risultato.\\\\
+Passi elementari: somma di due cifre.\\
+$172+ 43 = 215$ 
+\\
+\`E perci\`o un procedimento guidato deterministico $f:\{input\} \longrightarrow \{output\}$ dove f \`e calcolata dall'algoritmo.\\\\
+La funzione f \`e calcolabile se esiste un algoritmo che la calcola. Attenzione se esiste, non se la conosciamo.\\\\
+Esempi di funzioni calcolabili:
+\begin{itemize}
+\item  $f(x,y) = x + y$ \\
+La somma \`e calcolabile.
+\item  $f(x,y) =
+\begin{cases}
+1 \verb! x primo! \\ 0 \verb! x non primi!
+\end{cases}
+$\\
+L'individuazione dei numeri primi \`e calcolabile.
+
+\item $f(x) = x\textsuperscript{mo}$\\
+\`E difficile e ci si impiega tempo, vanno calcolati tutti mo, ma \`e calcolabile.
+\item $g(n) = n\textsuperscript{ma}$ cifra di $\pi$\\
+\`E difficile e ci si impiega tempo, vanno calcolati tutti mo, ma \`e calcolabile.
+\item $h(n) =
+\begin{cases}
+1 \verb! se in ! \pi \verb! ci sono esattamente 5 cifre consecutive! \\ 0 \verb! altrimenti!
+\end{cases}
+$\\
+Le cifre di $\pi$ vanno calcolate un p\`o alla volta. Se $\pi$ \`e normale (successioni con la medesima lunghezza che appaiono con la stessa frequenza) allora la costante \`e 1, altrimenti non lo so.
+\item  $h'(n) =
+\begin{cases}
+1 \verb! se esistono almeno n cifre 5 consecutive in ! \pi \\ 0 \verb! altrimenti!
+\end{cases}
+$\\
+Vale come sopra, se $\pi$ \`e normale allora la costante \`e 1, altrimenti non posso dire se \`e calcolabile.\\ Inoltre posso esprimere $k$ =  sup \{n $|$ n 5  consecutivi in $\pi$ \} =
+\begin{enumerate}  
+\item $k$ finito;
+\item $\infty$ se $\pi$ normale.
+\end{enumerate}
+Ovvero:
+\begin{enumerate}
+\item  $h'(n) =
+\begin{cases}
+1 \verb! se n <= k (per ogni sottoinsieme inferiore)! \\ 0 \verb! altrimenti!
+\end{cases}
+$
+\item  $h'(n) = 1  \verb! !\forall \verb!n! $
+\end{enumerate}
+\end{itemize}
+
+
+\end{document}
