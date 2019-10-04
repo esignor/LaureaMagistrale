@@ -49,5 +49,99 @@ Una buona tecnica, per punti, che permette di prevenire fallimenti del codice \`
 \item Effettuare \textit{code testing};
 \item Utilizzare un metodo formale di analisi statica. Questo permette la totale garanzia della correttezza del codice prodotto.
 \end{itemize}
+\newpage
+
+\chapter{Programmazione Semantica}
+La semantica \`e un asse fondamentale della \textit{Programming Language Theory} e si occupa di valutare una sequenza di simboli con regole (sintassi) e i meccanismi di grammatica in modo da mostrare il significato del calcolo. In sostanza permette di realizzare un modello.\\
+Il caso di \textit{parser} che rigetta il programma \`e un problema di sintassi, non di nostra competenza.\\\\
+\noindent
+\verb! if 1=1 then S1 else S2!\\
+semanticamente equivale a scrivere $S1$.\\\\\\
+Perch\`e fare semantica?
+\begin{itemize}
+\item Per dare una specifica su un linguaggio;
+\item Come supporto del \textit{testing};
+\item Permette di avere le basi per un prototipo (per interpreti e compilatori).
+\end{itemize}
+\noindent
+\textit{CompCert} \`e un compilatore per C, con impatto pratico e industriale certificato. Il codice che produce (oggetto) \`e equivalente al codice sorgente. Per questo c'\`e un modello sia per il codice oggetto che per il codice sorgente. CompCert usa il dimostratore Coq, che permette di verificare teoremi.\\
+Il codice generato da CompCert \`e vicino al GCC, ritenuto il pi\`u efficiente ed \`e a licenza per usi commerciali e \textit{open-source} se per usi personali.\\\\
+Il linguaggio che useremo un questo corso \`e \textit{Turing} completo e non impiegeremo il tipo puntatore in modo da non fare analisi statica all'interno della memoria.\\\\
+
+
+Perch\`e utilizzare un modello?
+\begin{itemize}
+\item Algo160 usa il linguaggio naturale, tuttavia in questo modo la semantica diventa incomprensibile. La scelta pi\`u adatta \`e scrivere un modello con una funzione che spiega, per esempio, che cosa sono i conflitti.
+\item Nello \textit{standard} del C++ la descrizione richiama un modello. La scelta migliore \`e quella di scriverlo in modo formale, per rendere pi\`u chiare le cose.
+\end{itemize}
+\noindent
+\textbf{Semantica Operazionale}: da un significato operazionale, descrive ogni operazione del programma nel dettaglio. Si divide in due tipi:
+\begin{itemize}
+\item Semantica Naturale;
+\item Semantica Operazionale Strutturale: \`e un interprete, si occupa di dare all'interpretatore le istruzioni senza alcuna ambiguit\`a.
+\end{itemize}
+\noindent
+\textbf{Semantica Denotazionale}: in questo caso si parla di funzione da stato a stato, questo per\`o non significa sempre che la funzione termina sempre, pu\`o accadere che la funzione non sia definita.  Pu\`o descrivere la terminazione con i possibili stati raggiunti dalle variabili. In questo caso i tipi sono:
+\begin{itemize}
+\item Stile Semantico Diretto
+\item Stile Semantico di Continuazione: con \textit{jump} e chiamate di funzione.
+\end{itemize}
+\noindent
+\textbf{Semantica Assiomatica} \`e la semantica degli invarianti. Specifica il significato di un programma rispetto a pre e postcondizioni.\\
+Se so per certo che il programma termina, e si ha la prova di terminazione, si parla di Correttezza Totale, altrimenti ci dobbiamo limitare alla Correttazza Parziale. \\\\
+\noindent
+Quale sematica scegliere? Dipende dall'obiettivo.
+Esistono diversi criteri di selezione della sematica: il costrutto del linguaggio (imperativo, funzionale, concorrente/parallelo ..), per che cosa si usa la semantica (per creare un prototipo, analisi di programma, verifica di un programma, comprendere un linguaggio, ..).
+\\\\
+\noindent
+Durante il corso faremo uso  del \textit{While language}\\
+\noindent
+\verb! S ::= x :=a | skip | S1;S2!\\
+\verb!             | if b then S1 else S2!\\
+\verb!             | while b do S!\\
+\verb!             | repeat S until b!\\
+e della notazione BNF che permette di scrivere in modo compatto una grammatica.
+\\\\
+\textbf{Categorie Sintattiche con While language}
+\begin{itemize}
+\item numeri \\
+n $\in$ Num 
+
+\item variabili
+x $\in$ Var\\
+Useremo il tipo numerico intero e nei valori letterali non specificheremo la sintassi.
+\item arithmetic expression
+a $\in$ Aexp
+\verb! a ::= n | x | a1+a2!\\
+\verb!             | a1*a2 | a1-a2!\\
+Non c'\`e la divisione per 0, perch\`e provoca un errore \textit{run-time} che inificia la semantica e non la sintassi. Questo per\`o deve essere presente durante l'analisi statica perch\`e \`e proprio il fenomeno che vogliamo evitare.
+\item boolean
+a $\in$ Bexp
+\verb! b ::= true | false | a1=a2!\\
+\verb!             | a1<=a2 |! $\lnot$ \verb!b | b1! $\lor$ \verb!b2!\\
+\item statements
+S $\in$ Stm
+\verb! S ::= x :=a | skip | S1;S2!\\
+\verb!             | if b then S1 else S2!\\
+\verb!             | while b do S!\\
+
+
+\end{itemize}
+\textbf{Categorie Semantiche}
+\begin{itemize}
+\item Modello per il tipo intero
+N = \{..-2,-1,0,1,2,..\} $\in$ Z\\
+T = \{tt, ff\} semantica dei valori di verit\`a\\
+La memoria memorizza lo stato del calcolo, dunque le variabili sono locazioni di memoria.\\
+State =  Var $\rightarrow$ N  (variabili che occorrono in un programma) \\
+\textit{lookup}  sx\\
+\textit{upadate} $s'x$ = s[y $\rightarrow$ v]\\
+$s'x =
+\begin{cases}
+sx\verb! x! \ne \verb!y! \\ v \verb! if x = y!
+\end{cases}
+$\\
+
+\end{itemize}
 
 \end{document}
