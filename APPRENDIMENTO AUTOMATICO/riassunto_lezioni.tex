@@ -11,13 +11,13 @@
 
 \section{Tipi di ragionamenti}
 \begin{itemize}
-\item \textbf{Ragionamento Deduttivo}: da ricondurre a \textit{Aristotele}(384 a.C.-322a.C.).\\
+\item \textbf{Ragionamento Deduttivo}: da ricondurre a \textit{Aristotele} (384 a.C.-322a.C.).\\
 Da una regola e da un caso ottengo un risultato. \`E il ragionamento che permette la dimostrazione dei teoremi, ed \`e stata la base dei AI degli anni '90.\\\\
 Esempio\\
 REGOLA: "Tutti gli uomini sono mortali."\\
 CASO: "Socrate \`e un uomo."\\
 RISULTATO: "Socrate \`e mortale."
-\item \textbf{Ragionamento Induttivo}:da ricondurre a \textit{Bacon} (1561-1626).\\
+\item \textbf{Ragionamento Induttivo}: da ricondurre a \textit{Bacon} (1561-1626).\\
 Avviene un'operazione di generalizzazione. Si hanno le premesse, casi particolari, che danno valenza a una certa regola, che \`e appunto una generalizzazione dei casi particolari. Di tale valenza non ne siamo sicuri a priori e deve essere dimostrata matematicamente.\\
 Questo ragionamento viene usato come approccio in \textit{Machine Learning}.\\\\
 Esempio\\
@@ -32,10 +32,41 @@ CASO: "Socrate mor\`i."\\
 RISULTATO: "Socrate \`e un uomo".
 \end{itemize}
 \noindent
-In \textit{Machine Learning} si perte da dati osservati (casi base) per dedurre una regola (generalizzazione). Questo permette di:
+In \textit{Machine Learning} si parte da dati osservati (casi base) per dedurre una regola (generalizzazione). Questo permette di:
 \begin{itemize}
 \item Descrivere i dati;
 \item Effettuare predizione sui nuovi casi che non ho ancora visto.
 \end{itemize}
+
+\section{Che cosa \`e Machine Learning}
+Domande chiave per la \textit{Machine Learning}:
+\begin{enumerate}
+\item Quanto e perch\`e \`e utile un approccio basato su tecniche di Apprendimento Automatico;
+\item Come si pu\`o apprendere;
+\item Si pu\`o veramente apprendere.
+\end{enumerate}
 \noindent
+Per iniziare a parlare di apprendimento \`e fondamentale trattare il concetto di algoritmo. Ovvero insieme finito di passi elementari sequenziali, che porta all'ottenimento di un risultato per risolvere un problema. L'algoritmo \`e un concetto fondamentale per l'informatica in quanto permette di capire se un problema \`e calcolabile e rappresenta l'oggetto cardine durante lo sviluppo di un \textit{software} (sviluppo di codice che permette la risoluzione effettiva di un problema da parte di un calcolatore).\\
+Un esempio semplice di algoritmo \`e una ricetta di cucina composta da ingredienti e procedimento.\\\\
+Tuttavia non sempre \`e possibile dare dei criteri oggettivi in modo da realizzare un algoritmo. Ipotizziamo di voler realizzare qualcosa che permette di individuare quali \textit{e-mail}, che arrivano nella nostra casella di posta elettronica, sono SPAM. \`E possibile? E quali criteri di differenziazione dovrebbe controllare l'algoritmo? E se le \textit{e-mail} a seguito di questa contromisura mutassero?. In conclusione non sempre si pu\`o risolvere un problema per mezzo du un algoritmo. I motivi per cui questo accade sono i seguenti:
+\begin{itemize}
+\item Impossibilit\`a di formalizzare esattamente il problema;
+\item Rumore e/o incertezza nel input/output;
+\item Elevata complessit\`a della soluzione;
+\item Inefficienza della soluzione;
+\item Si conosce solo il problema, ma non si sa come fare a risolverlo.
+\end{itemize}
+\noindent
+L'apprendimento, dal canto suo, \`e di primaria importanza, quando un sistema deve:
+\begin{itemize}
+\item Adattarsi all'ambiente in cui opera;
+\item Migliorare la propria \textit{performance} nei confronti di un compito specifico;
+\item Scoprire regolarit\`a e nuova conoscenza da dati empirici (ovvero non solo teorici, ma pratici).
+\end{itemize}
+I dati ormai sono abbondanti e presenti ovunque, questo ha permesso una crescita esponenziale della \textit{Machine Learning}, specialmente durante l'ultimo ventennio. Con formalismo la \textit{Machine Learning} \`e quella materia dove vengono studiati metodi per trasformare i dati in nuova conoscenza.\\
+\`E importante per questo comprendere come esiste un processo stocastico (stato successivo non determinato dallo stato corrente, dove dunque \`e in auge la probabilit\`a) che spiega i dati che osserviamo, anche se non nei dettagli; e come l'apprendimento sia in grado di costruire delle buone approssimazioni, utili, su questo processo.\\
+L'obiettivo finale dell'apprendimento, e della \textit{Machine Learning} in generale, \`e quello di definire dei criteri di \textit{performance} e di ottimizzarli utilizzando l'esperienza pregressa o i dati. I modelli di apprendimento si suddividono in modelli Preattivi che effettuano previsioni sul futuro e Descrittivi, che invece, permettono di ottenere nuova conoscenza.\\\\
+Vi sono numerosi esempi applicativi di \textit{Machine Learning}. Il riconoscimento facciale, la \textit{Named Entity Recognition} che permette di identificare entit\`a in un una frase, la classificazione dei documenti da un insieme di \textit{topics}, i giochi e la profilazione del avversario, anche nel campo della bioinformatica per comprendere, per esempio, come reagir\`a un paziente a una certa terapia, e molti altri.\\
+Di nota \`e \textit{Deep Blue} che nel 1997 \`e stata la prima macchina intelligente a riuscire a sconfiggere l'allora campione mondiale di scacchi, \textit{Kasparov}; e \textit{AphaGo} che nel 2016 riusc\`i a battere il campione di \textit{Go} \textit{Lee Sedal}.\\
+Esistono anche le \textit{Generative Adversarial Learning} che sulla base di immagini di \textit{training} riescono a inventarsene di nuove. Questo dimostra come la \textit{Machine Learning} pu\`o assumere un comportamento creativo. O ancora esiste un sistema composto da Rete generatrice e discriminante, in cui la prima deve riuscire a comprendere se le istanza  sono create dalla Rete o da un essere umano e la seconda a crearne di verosimili.
 \end{document}
