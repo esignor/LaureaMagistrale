@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float} 
 \begin{document}
 
 \chapter{Introduzione}
@@ -126,5 +128,29 @@ Un problema \`e definito da quattro componenti:
 \end{itemize}
 \noindent
 Una soluzione \`e una sequenza di azioni, da stato iniziale a stato di \textit{goal}.\\\\
-La funzione successore pu\`o non solo essere definita come la coppia (azione, stato), ma anche come le azioni eseguibili di uno stato e il \textit{transition model} ovvero l'effetto ottenuto da ogni singola azione.
+La funzione successore pu\`o non solo essere definita come la coppia (azione, stato), ma anche come le azioni eseguibili di uno stato e il \textit{transition model} ovvero l'effetto ottenuto da ogni singola azione.\\\\
+Essendo che il mondo reale \`e complesso per risolvere il problema lo spazio degli stati deve essere astratto.\\
+Uno stato astratto \`e un insieme di stati reali, un'azione astratta \`e una combinazione complessa di azioni reali, per garantire la realizzabilit\`a del modello, qualsiasi stato reale deve condurre a qualche stato reale. Anche una soluzione deve essere astrata e rappresenta un'insieme di cammini reali che sono sluzioni nel mondo reale. Inoltre ogni azone astratta deve essere pi\`u del semplice del problema originario.\\\\
+Esistono diverse st1rategie di ricerca:
+\begin{itemize}
+\item ricerca su grafo
+\item ricerca su albero per profondit\`a o per ampiezza.
+\end{itemize}
+\noindent
+Le ricerche su albero in profondit\`a assumono una coda con priorit\`a LIFO, ove l'ultimo nodo a essere visitato viene posto in cima allo \textit{stack}, invece le ricerche per ampiezza assumono una coda con priorit\`a FIFO, ove l'ultimo nodo visitato viene messo a termine dello \textit{stack}.
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=1\linewidth]{./images/code-grafo.png}
+  \caption{Esempio di ricerca del cammino minimo per Bucharest con grafo.}
+   \label{fig: esempio-ricerca-grafo}
+\end{figure}
+\noindent
+\begin{figure}[H]
+\centering
+  \includegraphics[width=1\linewidth]{./images/code-albero.png}
+  \caption{Esempio di ricerca del cammino minimo per Bucharest con albero.}
+   \label{fig: esempio-ricerca-albero}
+\end{figure}
+\noindent
 \end{document}
