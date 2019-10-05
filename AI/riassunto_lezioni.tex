@@ -53,39 +53,39 @@ PEAS identifica 4 componenti da caratterizzare, le caratteristiche dell'ambiente
 
 \subsection{Pilota automatico per taxi}
 \begin{itemize}
-\item \textbf{Misura di prestazione}: obiettivi che si intendo realizzare, arrivare a destinazione corretta, profitto massimo, veloce, ligio alla legge, viaggio confortevole.
+\item \textbf{Misura di prestazione}: obiettivi che si intendendono realizzare, arrivare a destinazione corretta, profitto massimo, veloce, ligio alla legge, viaggio confortevole;
 \item \textbf{L'ambiente}: in cui l'agente deve operare, strade, altri veicoli, pedoni, clienti;
-\item \textbf{Attuatori}: reagiscono verso l'ambiente, acceleratore, sterzo, freno, frecce, clacson, schermo di interfaccia per comunicare con i passageri.
-\item \textbf{Sensori}: recepiscono informazioni dall'ambiente, permettendogli di raggiungere i suoi obiettivi, telecamere, \textit{sonar}, tachimetro, GPS contachilomeri, accelerometro, sensori sul motore, tastiera.
+\item \textbf{Attuatori}: reagiscono verso l'ambiente, acceleratore, sterzo, freno, frecce, \textit{clacson}, schermo di interfaccia per comunicare con i passageri.
+\item \textbf{Sensori}: recepiscono informazioni dall'ambiente, permettendo all'agente di raggiungere i suoi obiettivi, telecamere, \textit{sonar}, tachimetro, GPS contachilomeri, accelerometro, sensori sul motore, tastiera.
 \end{itemize}
 \noindent
 Per progettare un agente devono essere fatte delle scelte:
 \begin{itemize}
 \item \textbf{Osservabile}: quando i sensori hanno accesso allo stato completo dell'ambiente in ogni momento. I sensori devono essere in grado di misurare gli aspetti rilevanti per le scelte dell'azione. Altrimenti si parla di osservabilit\`a parziale o non osservabile.
-\item \textbf{Deterministico}: lo stato successivo \`e completamente determinato dallo stato corrente dell'agente, in caso contratio si parla di stocasticit\`a.
-\item \textbf{Episodico}: esperienza dell'agente che non deve dipendere da episodi precedenti, altrimenti si parla di sequenziale. In ambienti episodici la scelta dell'azione dipende esclusivamente dall'episodio corrente
-\item \textbf{Statico}: l'ambiente \`e stazionario nel tempo, altrimenti parliamo di ambiente dinamico.
-\item \textbf{Discreto}: applicato allo stato dell'ambiente, il modo in cui \`e gestito il tempo, alle percezioni e azioni dell'agente. \`E discreto quanto si ha un numero finito e distinto. Discreto quando i punti sono successivi l'uno all'altro.
+\item \textbf{Deterministico}: lo stato successivo \`e completamente determinato dallo stato corrente dell'agente, in caso contratio si parla di stocasticit\`a;
+\item \textbf{Episodico}: esperienza dell'agente che non deve dipendere da episodi precedenti, altrimenti si parla di sequenziale. In ambienti episodici la scelta dell'azione dipende esclusivamente dall'episodio corrente.
+\item \textbf{Statico}: l'ambiente \`e stazionario nel tempo, altrimenti parliamo di ambiente dinamico;
+\item \textbf{Discreto}: applicato allo stato dell'ambiente, il modo in cui \`e gestito il tempo, alle percezioni e azioni dell'agente. \`E discreto quanto si ha un numero finito e distinto. Continuo quando i punti sono successivi l'uno all'altro.
 \item \textbf{Agente}: numero di agenti presenti nell'ambiente, con il vincolo che l'agente B ha un comportaento che tenta di massimizzare una misura di prestazione da cui dipende il comportamento di A.
 \end{itemize}
 \subsection{Tipi di agenti}
-Un agente ha sensori e attuatori
+Un agente ha sensori e attuatori.
 \subsubsection{Agenti a riflesso semplice}
 Si dimentica la storia, si ricorda solo l'ultima percezione percepita. Prende la decisione sull'azione da compiere solo sulla base di quello percepito al tempo T.\\
 Per realizzare l'agete basta soddisfare la relazione condizione soddisfatta $\rightarrow$ azione conseguente. Un esempio \`e quello dell'aspirapolvere.
 Sulla base delle informazioni percepite dai sensori, si seleziona la regola, dunque l'azione da svolgere con gli attuatori.\\
-Tuttavia vi \`e un problema. Se l'ambiente \`e parzialmente osservabile, l'agente pu\`o fallire. Se, difatti, cambia qualche situazione di contorno si pu\`o ritrovare all'interno di un \textit{loop} (come nel caso di un ragnetto in un labirinto portato sempre a sinistra e poi per qualche motivo si trova a dover svoltare a destra). A tale inconveniente si pu\`o reagire con una scelta \textit{random}.\\
+Tuttavia vi \`e un problema. Se l'ambiente \`e parzialmente osservabile, l'agente pu\`o fallire. Se, difatti, cambia qualche situazione di contorno si pu\`o ritrovare all'interno di un \textit{loop} (come nel caso di un ragnetto in un labirinto portato sempre a sinistra che poi per qualche motivo si trova a dover svoltare a destra). A tale inconveniente si pu\`o reagire con una scelta \textit{random}.\\
 In conclusione con un agente a riflesso semplice si hanno delle regole fissate e un unico \textit{goal}.
 
 \subsubsection{Agenti a riflesso con stato}
-Nasce come miglioramento alla tipologia di agente precedente. Si tiene traccia, in memoria, delle percezioni passate. \`E per\`o osservabile solo se l'ambiente \`e statico. In questo modo si crea una mappa come modello di come il mondo evolve e l'effetto delle singole azioni nel mondo.\\
+Nasce come miglioramento alla tipologia di agente precedente. Si tiene traccia, in memoria, delle percezioni passate. \`E per\`o osservabile solo se l'ambiente \`e statico. In questo modo si crea una mappa di come il mondo evolve e l'effetto delle singole azioni.\\
 In questo caso nella sequenza condizione $\rightarrow$ azione \`e incluso anche lo stato che permette di lavorare anche in ambienti parzialmente osservabili.\\
 Tuttavia tale approccio \`e ancora poco flessibile, perch\`e il comportamento degli attuatori rimane nelle regole che permettono di raggiungere un certo \textit{goal}. Tale tipologia ha portato il vantaggio di togliere le limitazioni alle regole.
 \subsubsection{Agenti basati su goal}
 Definisco degli obiettivi internamente che permettono la selezione dell'azione da parte degli attuatori. Viene svolta una sorta di simulazione di cosa dovrebbe succedere per uno specifico \textit{goal} in modo da selezionare le azioni che portano al suo soddisfacimento.
 \subsubsection{Agenti basati su una misura di utilit\`a}
 In questo caso l'agente ha una misura di utilit\`a. Tale funzione serve quando un'agente ha pi\`u obiettivi che non possono convivere e dunque deve seleziona quale privilegiare o a valutarne la probabilit\`a di successo. Nel concreto la funzione utilit\`a  assegna a uno stato un numero reale che \`e la contentezza a esso associato.
-Questo porta un agente basato sugli obiettivi a assumere comportamenti di alta qualit\`a. Per esempio nel caso del taxi ci sono molte strade che portano alla stessa destinazioni ma alcune sono pi\`u sicure, pi\`u veloci, affidabili, economiche.
+Questo porta un agente basato sugli obiettivi a assumere comportamenti di alta qualit\`a. Per esempio nel caso del taxi ci sono molte strade che portano alla stessa destinazione ma alcune sono pi\`u sicure, pi\`u veloci, affidabili e economiche di altre.
 \\\\
 \noindent
 Ogni architettura risponde ad agenti diversi a seconda del compito da svolgere.
@@ -105,8 +105,8 @@ Un esempio di argomento non trattato sono le cifre monoscritte in quanto si poss
 La formulazione del problema \`e il processo che porta a decidere dato un obiettivo, quali azioni e stati considerare.\\
 Si si deve astrarre dai dettagli e da questo:
 \begin{itemize}
-\item \textbf{Formulare il \textit{goal}}: l'obiettivo da raggiungere
-\item \textbf{Formulare il problema}: descrivere gli stati e le azioni possibili
+\item \textbf{Formulare il \textit{goal}}: l'obiettivo da raggiungere;
+\item \textbf{Formulare il problema}: descrivere gli stati e le azioni possibili;
 \item \textbf{Trovare una soluzione}: sequenza di azioni/stati desiderabili per il problema.
 \end{itemize}
 \noindent
@@ -122,7 +122,7 @@ L'esempio si dimostra come osservabile, determinisitico e discreto.\\\\
 Un problema \`e definito da quattro componenti:
 \begin{itemize}
 \item  \textbf{Stato iniziale}: in cui si trova l'agente, dunque Arad;
-\item  \textbf{Funzione successore}: che descrive tutte la coppia azioni possibili dall'agente e stati raggiungibili, dallo stato dove si trova l'agente. Le azioni devono essere atomiche.
+\item  \textbf{Funzione successore}: che descrive tutte le coppie azioni possibili dall'agente e stati raggiungibili, dallo stato dove si trova l'agente. Le azioni devono essere atomiche.
 \item  \textbf{Test per il \textit{goal}}: riconosce se si \`e raggiunto l'obiettivo. Non pu\`o esclusivamente trattarsi del nome di uno stato (esplicito), ma anche gli stati che soddisfano una certa propriet\`a (implicito).
 \item  \textbf{Costo di un cammino addittivo}: il costo numerico di un cammino (numero di distanza, numero di azioni eseguite).  Si valuta sempre il costo di ogni singolo passo che deve sempre essere $\ge$ 0. L'agente sceglier\`a il costo che rispecchia la misura di prestazione.
 \end{itemize}
@@ -130,11 +130,11 @@ Un problema \`e definito da quattro componenti:
 Una soluzione \`e una sequenza di azioni, da stato iniziale a stato di \textit{goal}.\\\\
 La funzione successore pu\`o non solo essere definita come la coppia (azione, stato), ma anche come le azioni eseguibili di uno stato e il \textit{transition model} ovvero l'effetto ottenuto da ogni singola azione.\\\\
 Essendo che il mondo reale \`e complesso per risolvere il problema lo spazio degli stati deve essere astratto.\\
-Uno stato astratto \`e un insieme di stati reali, un'azione astratta \`e una combinazione complessa di azioni reali, per garantire la realizzabilit\`a del modello, qualsiasi stato reale deve condurre a qualche stato reale. Anche una soluzione deve essere astrata e rappresenta un'insieme di cammini reali che sono sluzioni nel mondo reale. Inoltre ogni azone astratta deve essere pi\`u del semplice del problema originario.\\\\
-Esistono diverse st1rategie di ricerca:
+Uno stato astratto \`e un insieme di stati reali, un'azione astratta \`e una combinazione complessa di azioni reali, per garantire la realizzabilit\`a del modello, qualsiasi stato reale deve condurre a qualche stato reale. Anche una soluzione deve essere astratta e rappresenta un'insieme di cammini reali che sono sluzioni nel mondo reale. Inoltre ogni azione astratta deve essere pi\`u semplice del problema originario.\\\\
+Esistono diverse strategie di ricerca:
 \begin{itemize}
-\item ricerca su grafo
-\item ricerca su albero per profondit\`a o per ampiezza.
+\item Ricerca su grafo;
+\item Ricerca su albero per profondit\`a o per ampiezza.
 \end{itemize}
 \noindent
 Le ricerche su albero in profondit\`a assumono una coda con priorit\`a LIFO, ove l'ultimo nodo a essere visitato viene posto in cima allo \textit{stack}, invece le ricerche per ampiezza assumono una coda con priorit\`a FIFO, ove l'ultimo nodo visitato viene messo a termine dello \textit{stack}.
