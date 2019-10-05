@@ -77,6 +77,14 @@ Sulla base delle informazioni percepite dai sensori, si seleziona la regola, dun
 Tuttavia vi \`e un problema. Se l'ambiente \`e parzialmente osservabile, l'agente pu\`o fallire. Se, difatti, cambia qualche situazione di contorno si pu\`o ritrovare all'interno di un \textit{loop} (come nel caso di un ragnetto in un labirinto portato sempre a sinistra che poi per qualche motivo si trova a dover svoltare a destra). A tale inconveniente si pu\`o reagire con una scelta \textit{random}.\\
 In conclusione con un agente a riflesso semplice si hanno delle regole fissate e un unico \textit{goal}.
 
+\begin{figure}[H]
+\centering
+  \includegraphics[width=1\linewidth]{./images/esempi-ambiente.png}
+  \caption{Esempi di classificazione degli ambienti.}
+   \label{fig: esempi-ambiente}
+\end{figure}
+\noindent
+
 \subsubsection{Agenti a riflesso con stato}
 Nasce come miglioramento alla tipologia di agente precedente. Si tiene traccia, in memoria, delle percezioni passate. \`E per\`o osservabile solo se l'ambiente \`e statico. In questo modo si crea una mappa di come il mondo evolve e l'effetto delle singole azioni.\\
 In questo caso nella sequenza condizione $\rightarrow$ azione \`e incluso anche lo stato che permette di lavorare anche in ambienti parzialmente osservabili.\\
