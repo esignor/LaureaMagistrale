@@ -1,4 +1,4 @@
- /*.pdf
+./wiley.pdf
 *.lof
 *.lot
 *.aux
@@ -11,3 +11,4 @@
 *.fdb_latexmk
 *.fls
 *.dvi
+./SLIDE
