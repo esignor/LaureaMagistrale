@@ -1,0 +1,41 @@
+\documentclass[10pt,a4paper]{book}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float} 
+\begin{document}
+\chapter{Introduzione}
+
+\section{Tipi di ragionamenti}
+\begin{itemize}
+\item \textbf{Ragionamento Deduttivo}: da ricondurre a \textit{Aristotele}(384 a.C.-322a.C.).\\
+Da una regola e da un caso ottengo un risultato. \`E il ragionamento che permette la dimostrazione dei teoremi, ed \`e stata la base dei AI degli anni '90.\\\\
+Esempio\\
+REGOLA: "Tutti gli uomini sono mortali."\\
+CASO: "Socrate \`e un uomo."\\
+RISULTATO: "Socrate \`e mortale."
+\item \textbf{Ragionamento Induttivo}:da ricondurre a \textit{Bacon} (1561-1626).\\
+Avviene un'operazione di generalizzazione. Si hanno le premesse, casi particolari, che danno valenza a una certa regola, che \`e appunto una generalizzazione dei casi particolari. Di tale valenza non ne siamo sicuri a priori e deve essere dimostrata matematicamente.\\
+Questo ragionamento viene usato come approccio in \textit{Machine Learning}.\\\\
+Esempio\\
+REGOLA: "Socrate \`e un uomo."\\
+CASO: "Socrate mor\`i."\\
+RISULTATO: "Tutti gli uomini sono mortali."
+\item \textbf{Ragionamento Abduttivo}: da ricondurre a \textit{Peirce} (1839-1914).\\
+Qui il ragionamento viene invertito. Difatti viene potizziato che un'implicazione valga anche al contrario.\\\\
+Esempio\\
+REGOLA: "Tutti gli uomini sono mortali."\\
+CASO: "Socrate mor\`i."\\
+RISULTATO: "Socrate \`e un uomo".
+\end{itemize}
+\noindent
+In \textit{Machine Learning} si perte da dati osservati (casi base) per dedurre una regola (generalizzazione). Questo permette di:
+\begin{itemize}
+\item Descrivere i dati;
+\item Effettuare predizione sui nuovi casi che non ho ancora visto.
+\end{itemize}
+\noindent
+\end{document}
