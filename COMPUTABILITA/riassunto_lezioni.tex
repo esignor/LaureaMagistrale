@@ -16,7 +16,7 @@ Causato dall'esistenza dei numeri casuali, ovvero programmi di dimensione superi
 I numeri casuali sono in numero infinto, inoltre non \`e possibile realizzare un programma che determini se un numero \`e casuale.\\\\
 Conclusione: non tutto si pu\`o risolvere per mezzo di un calcolatore, questi problemi sono ben formalizzati. Alcuni esempi sono:
 \begin{itemize}
-\item \textit{Haiting Input} (problema della non terminazione di un programma dato uno specifico input);
+\item \textit{Haiting Input} (problema della non terminazione di un programma dato uno specifico \textit{input});
 \item Correttezza dei programmi.
 \end{itemize}
 L'obiettivo del corso \`e:
@@ -35,7 +35,7 @@ L'informatica inizia a trattare i problemi di computabilit\`a ancora prima di na
 \textit{Dijkstra} parla di "informatica scienza delle procedure".\\
 L'informatica \`e figlia della logica intesa come studio dei maccanismi del ragionamento (da dalle premesse si riesce a trarre delle conclusioni).\\
 Si parla di schemi di ragionamento che portano a delle varit\`a sempre vere:\\
-Ogni uomo \`e morale $\longrightarrow$ Socrate \`e un uomo $\longrightarrow$ Socrate \`e un uomo
+Ogni uomo \`e morale $\longrightarrow$ Socrate \`e un uomo $\longrightarrow$ Socrate \`e mortale.
 \\\\
 \textit{Lullus} cosruisce il primo esempio di meccanismo, la ruola lulliana. Crea frasi su cui l'uomo pu\`o ragionare.
 \\\\
@@ -47,14 +47,14 @@ Ogni uomo \`e morale $\longrightarrow$ Socrate \`e un uomo $\longrightarrow$ Soc
 \noindent
 Questo permette di avere un metodo matematico che risolve le controversie. Un esempio pratico di questa idea \`e la \textit{Staffelwalze}, la prima macchina calcolatrice che computa le quattro operazioni aritmetiche.
 \\\\
-\textit{Boole} riprende le idee di \textit{Leibniz}. vuole interpretare con un'algebra (formalismo simbolico) i meccanismi della logica: algebra booleana che fornisce uno strumento di congiunzione tra i concetti. Per farlo tutto viene regolamentato da leggi $\in$ {0,1} che consentendo la creazione di leggi universalmente accettate.\\\\
+\textit{Boole} riprende le idee di \textit{Leibniz}. Vuole interpretare con un'algebra (formalismo simbolico) i meccanismi della logica: algebra booleana che fornisce uno strumento di congiunzione tra i concetti. Per farlo tutto viene regolamentato da leggi $\in$ {0,1} che consentendo la creazione di leggi universalmente accettate.\\\\
 \textit{Baddage} sviluppa  idealmente delle macchine \textit{general purpose} per il calcolo dei polinomi e a schede perforate programmabili con memoria e unit\`a aritmetica. Quest'ultima ha permesso lo sviluppo di ADA.\\\\
 \textit{Frege} inventa la logica del primo ordine e si occupa di togliere la circolarit\`a presente all'interno della Logica di \textit{Boole}. Introduce i quantificatori esiste e per ogni. Tuttavia \textit{Russel} individua un paradosso nei suoi ragionamenti \{$x | x \notin x$\}.\\\\
 \noindent
 \textit{Hilbert} ricerca un sistema matematico formale composto da regole e assiomi, che si dimostri consistente e solido, senza alcun paradosso. In modo da ottenere un algoritmo in grado di definire se un teorema \`e conseguenza diretta dei suoi assiomi.\\\\
 \textit{Godel} dimostra l'impossibilit\`a delle aspettative di \textit{Hilbert}. Esiste sempre qualcosa di vero impossibile da dimostrare. Inotre se T \`e assiomatizzabile non \`e possibile dimostrarne la consistenza interna.\\\\
-\textit{Turing} definisce il concetto di algoritmo e si inventa una macchina programmabile con funzione calcolabile per dimostrare che non tutti i teoremi sono risolvibili. In questo modo \textit{Turing} dimostra l'esistenza di una macchina universale che funge da interprete (esecuzione di programmi sui dati di \textit{input}). Tuttavia la realizzazione del primo calcolatore programmabile fallisce a causa di limiti di risorse.\\\\
-\textit{Von Neumann} realizza il primo progetto di macchina calcolatrice dall'idea della macchina di \textit{Turing} universale, realizzando il \textit{computer} digitale moderno.\\\\
+\textit{Turing} definisce il concetto di algoritmo e si inventa una macchina programmabile, con funzione calcolabile, per dimostrare che non tutti i teoremi sono risolvibili. In questo modo \textit{Turing} dimostra l'esistenza di una macchina universale che funge da interprete (esecuzione di programmi sui dati di \textit{input}). Tuttavia la realizzazione del primo calcolatore programmabile fallisce a causa di limiti di risorse.\\\\
+\textit{Von Neumann} realizza il primo progetto di macchina calcolatrice, dall'idea della macchina di \textit{Turing} universale, realizzando il \textit{computer} digitale moderno.\\\\
 \pagebreak
 
 \chapter{Algoritmo e calcolabilit\`a}
@@ -73,7 +73,7 @@ Esempi di funzioni calcolabili:
 La somma \`e calcolabile.
 \item  $f(x,y) =
 \begin{cases}
-1 \verb! x primo! \\ 0 \verb! x non primi!
+1 \verb! x primo! \\ 0 \verb! x non primo!
 \end{cases}
 $\\
 L'individuazione dei numeri primi \`e calcolabile.
@@ -81,7 +81,7 @@ L'individuazione dei numeri primi \`e calcolabile.
 \item $f(x) = x\textsuperscript{mo}$\\
 \`E difficile e ci si impiega tempo, vanno calcolati tutti mo, ma \`e calcolabile.
 \item $g(n) = n\textsuperscript{ma}$ cifra di $\pi$\\
-\`E difficile e ci si impiega tempo, vanno calcolati tutti mo, ma \`e calcolabile.
+\`E difficile e ci si impiega tempo, vanno calcolati tutti ma, ma \`e calcolabile.
 \item $h(n) =
 \begin{cases}
 1 \verb! se in ! \pi \verb! ci sono esattamente 5 cifre consecutive! \\ 0 \verb! altrimenti!
